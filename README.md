@@ -4,7 +4,7 @@ State machines for the modern swift development.
 
 ## Super quick start
 
-```
+```swift
 enum StateId: StateType {
     case inactive
     case active
