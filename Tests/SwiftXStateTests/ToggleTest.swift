@@ -43,18 +43,18 @@ final class ToggleTest: XCTestCase {
     }
 
     func testToggle() {
-        XCTAssertEqual(inactive.id, service.state.id)
+        XCTAssertEqual(.inactive, service.state.id)
         
         service.start(event: .`init`)
-        XCTAssertEqual(inactive.id, service.state.id)
+        XCTAssertEqual(.inactive, service.state.id)
         
         service.send(event: .toggle)
-        XCTAssertEqual(active.id, service.state.id)
+        XCTAssertEqual(.active, service.state.id)
       
         service.send(event: .toggle)
-        XCTAssertEqual(inactive.id, service.state.id)
+        XCTAssertEqual(.inactive, service.state.id)
         
         service.send(event: .toggle)
-        XCTAssertEqual(active.id, service.state.id)
+        XCTAssertEqual(.active, service.state.id)
     }
 }
